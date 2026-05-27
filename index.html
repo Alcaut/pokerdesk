@@ -3109,7 +3109,7 @@ function initListeners(){
   onValue(ref(db,'players'),snap=>{players=snap.val()||{};renderPl();renderJourn();renderDash();renderTalent();});
   onValue(ref(db,'config'),snap=>{
     CFG=snap.val()||{};DM=parseInt(CFG.delay)||30;
-    document.getElementById('mb').textContent='Modo '+(CFG.mode||'A');
+    // modo badge removed
     const fs={name:'cfg-name',prize:'cfg-prize',buyin:'cfg-buyin',field:'cfg-field',stack:'cfg-stack',venue:'cfg-venue',city:'cfg-city',date:'cfg-date',starttime:'cfg-starttime',twitchES:'cfg-twitch-es',ytES:'cfg-yt-es',fbES:'cfg-fb-es',xES:'cfg-x-es',twitchPT:'cfg-twitch-pt',ytPT:'cfg-yt-pt',delay:'cfg-delay'};
     Object.entries(fs).forEach(([k,id])=>{const e=document.getElementById(id);if(e&&CFG[k])e.value=CFG[k];});
     if(CFG.mode){const e=document.getElementById('cfg-mode');if(e)e.value=CFG.mode;}
