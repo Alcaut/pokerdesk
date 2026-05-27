@@ -1308,8 +1308,8 @@ window.login=()=>{
   CR=SR;
   document.getElementById('login-screen').style.display='none';
   document.getElementById('app').style.display='block';
-  document.getElementById('rb').textContent=role.label;
-  document.getElementById('srole').textContent=role.label;
+  const rbEl=document.getElementById('rb');if(rbEl) rbEl.textContent=role.label;
+  const sroleEl=document.getElementById('srole');if(sroleEl) sroleEl.textContent=role.label;
   if(CR==='admin'){
     document.getElementById('sb-warn').style.display='flex';
     document.getElementById('warn-cfg-btn').style.display='block';
